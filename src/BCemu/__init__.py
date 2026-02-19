@@ -8,6 +8,11 @@ For example:
 >>> help(BCemu.use_emul)
 '''
 import sys
+from ._imp_compat import install_imp_compat
+
+# Python 3.13 compatibility for smt==1.0.0 -> pyDOE2 import chain.
+install_imp_compat()
+
 from .BaryonEffectsEmulator import *
 from . import download
 # from . import kpls 
